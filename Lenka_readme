@@ -1,0 +1,57 @@
+Lenka's log, terran date tuesday april 10th, 2018:
+
+My scaleway server.
+
+It's THE server running in the private cloud.
+And I need to remember how to access it.
+Because there is some problem installing npm and Toni thinks
+it's gonna get fixed if I use this My scaleway server,
+which is paid.
+
+The access:
+
+run ssh root@51.15.134.235
+
+(That's the IP address to connect to.)
+
+There is my public ssh key, which I should try not to overwrite.
+So it should not ask me for a password.
+
+====================================================================
+Lenka's log, terran date wednesday april 11th, 2018:
+
+Behold the npm!
+
+First run:
+
+npm install
+
+Second run:
+
+npm start
+
+= it will serve a page on localhost:8080....with text "React simple starter"
+
+====================================================================
+Lenka's log, terran date saturday april 14th, 2018:
+
+TIL: how to get youtube API key
+go to console.developers.google.com, search for APIs and services,
+search for youtube api search v3, go to credentials and generate API key.
+
+This api key put as a constant const API_KEY = 'the key' into index.html
+
+And also download one package: npm install --save youtube-api-search
+The --save means that it gets saved into package.json file
+
+SEARCH BAR
+
+file: search_bar.js
+
+===================================================================
+Lenka's log, terran date sunday april 15th, 2018:
+
+TIL: declaring the component Search Bar
+1. Write the component into components/search_bar.js
+2. Export it (export default SearchBar)
+3. Import it into index.html file
