@@ -1,9 +1,31 @@
 // I need text input and update of the video_list_item
 
-import React from 'react';
+import React, { Component } from 'react'; // the curly braces around component
+//mean the same as setting a constant (const Component = React.Component)
 
-const SearchBar = () => {
-  return <input />;
-};
+class SearchBar extends Component { //extends means
+  //give it access to all the functionality that react.component has
+  constructor(props) {  //constructor fuction is reserved for setups, like
+    //initializing a variable or state
+    super(props); // magic function
+
+    this.state = { term: '' }; // whenever we use state, we initialize it by
+    // creating a new object and assigning it to this start state
+  }
+
+  render() {
+    return (
+      <div>
+    <input 
+      value={this.state.term}
+      onChange={event => this.setState({ term: event.target.value })} />
+      </div>
+    );
+  }
+
+  //onInputChange(event) {
+  //  console.log(event.target.value); //javascript console is printing input
+  //}
+}
 
 export default SearchBar;

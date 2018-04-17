@@ -55,3 +55,19 @@ TIL: declaring the component Search Bar
 1. Write the component into components/search_bar.js
 2. Export it (export default SearchBar)
 3. Import it into index.html file
+
+==================================================================
+Lenka's log, terran date monday april 16th, 2018:
+
+TIL: Creating the component as a class, not a function (Search Bar)
+- onChange eventhandler	
+- and using an arrow function to make it more neat
+- STATE = plain javascript object that is used to record and react to user events
+
+==================================================================
+Lenka's log, terran date tuesday april 17th, 2018:
+
+TIL: - this.state and this.setState feature
+- YTSearch with API key
+- import of Component (class App extends Component)
+- constructor
