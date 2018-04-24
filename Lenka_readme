@@ -71,3 +71,23 @@ TIL: - this.state and this.setState feature
 - YTSearch with API key
 - import of Component (class App extends Component)
 - constructor
+
+==================================================================
+Lenka's log, terran date wednesday april 18th, 2018:
+
+TIL:
+- VideoListItem
+- how to iterate through array without a for loop = with a map
+	const videoItems = props.videos.map((video) => {
+	console.log(video)
+	}
+- the snippet object = in the browser console of each video: info about id, title, 
+description
+- HTML formatting (className and div) of the video_list_item.js - to 
+see video picture and video heading
+
+==================================================================
+Lenka's log, terran date tuesday april 24th, 2018:
+
+Long time no see. The video play  is still not working. 
+Now working on the video list to be clickable.
