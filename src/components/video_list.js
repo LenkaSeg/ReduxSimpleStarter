@@ -6,8 +6,12 @@ const VideoList = (props) => { //the s.grider has something against for loops An
   //{props.videos.length} //this is an array with all the videos. To get one.
   //loop through it and for each video create an instance
   const videoItems = props.videos.map((video) => {
-    console.log(video)
-    return <VideoListItem key={video.etag} video={video} />
+    return (
+      <VideoListItem
+      onVideoSelect={props.onVideoSelect} 
+      key={video.etag}
+      video={video} />
+    );
   });
 
   return (

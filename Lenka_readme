@@ -87,7 +87,20 @@ description
 see video picture and video heading
 
 ==================================================================
-Lenka's log, terran date tuesday april 24th, 2018:
+Lenka's log, terran date wednesday april 25th, 2018:
 
 Long time no see. The video play  is still not working. 
 Now working on the video list to be clickable.
+Step 1 - selectedVideo
+index.js = add selectedVideo:null to the App this.state
+= pass the selectedVideo to the render videoDetail 
+{this.state.selectedVideo}
+= YTSearch: set the initial value of selected video to videos[0]
+Step 2 - implement callback
+callback will be a function which we pass from App to video_list and to 
+Video_list_item
+= index.js render, add to VideoList "onVideoSelect"={selectedvideo => 
+this.setState({selectedVideo})}
+= in video_list pass another onVideoSelect as another property to 
+VideoList
+= in video_list_item pass onVideoSelect to VideoListItem
