@@ -104,3 +104,5 @@ this.setState({selectedVideo})}
 = in video_list pass another onVideoSelect as another property to 
 VideoList
 = in video_list_item pass onVideoSelect to VideoListItem
+= in video_list_item add to the li component onClick-{() => 
+onVideoSelect(video)}
