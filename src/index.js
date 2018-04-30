@@ -4,6 +4,7 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
+import _ from 'lodash';
 
 const API_KEY = 'AIzaSyAyKFMPFw1mrcXSAOE1zDyA188Vm-bOupg'
 
@@ -19,11 +20,13 @@ class App extends Component { //the new jsx syntax, fat arrow instead of functio
       selectedVideo: null
     };
 
-
-    {/* videos:videos = YTSearch goes to fetch some videos and puts them into
-      this array*/}
-    {/* selectedVideo = and the first video of the array is the selectedVideo*/}
-    YTSearch({key: API_KEY, term:'surfboards'}, (videos) => {
+    this.videoSearch('surfboards');
+  }
+// videos:videos = YTSearch goes to fetch some videos and puts them into
+    //this array
+//selectedVideo = and the first video of the array is the selectedVideo*/}
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -31,10 +34,15 @@ class App extends Component { //the new jsx syntax, fat arrow instead of functio
     });
   }
 
+
   render() {
+    //passing the search into to debounce of lodash so it waits 300 miliseconds
+    const videoSearch = _.debounce((term) => { this.videoSearch(term) }, 300);
+
+
     return (
     <div>
-      <SearchBar />
+      <SearchBar onSearchTermChange={videoSearch}/>
       <VideoDetail video={this.state.selectedVideo} />
       <VideoList
         onVideoSelect={selectedVideo => this.setState({selectedVideo})}

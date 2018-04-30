@@ -86,6 +86,7 @@ description
 - HTML formatting (className and div) of the video_list_item.js - to 
 see video picture and video heading
 
+
 ==================================================================
 Lenka's log, terran date wednesday april 25th, 2018:
 
@@ -106,3 +107,40 @@ VideoList
 = in video_list_item pass onVideoSelect to VideoListItem
 = in video_list_item add to the li component onClick-{() => 
 onVideoSelect(video)}
+
+==================================================================
+Lenka's log, terran date wednesday april 25th, 2018:
+
+TIL Working SearchBar
+= define callback, with a method in the App (index.js) = put all the 
+YTSearch inside videoSearch(term) {}
+= to constructor (index.js) write this.videoSearch('surfboards');
+= in search_bar.js add a new function onInputChange(term) and modify 
+render input onChange to point there
+
+The new search triggers after every change = after every letter written. 
+Maybe it's better to trigger it only every second and half
+= install lodash (npm install --save lodash) and import to index.js
+= into index.js render: const VideoSearch = _.debounce((term) => { 
+this.videoSearch(term) }, 300)
+= pass the new videoSearch function into the property of SearchBar
+
+==================================================================
+Lenka's log, terran date monday april 30th, 2018:
+
+HOW THINGS WORK
+= the difference between class based component and functional component:
+CLASS COMPONENT
+ = when we want concept of state in our component
+FUNCTIONAL COMPONENT
+ = (video list, video list item)
+ = whenever we have a simple component that just takes some number of 
+properties and returns some amount of static JSX
+ = lightweight and fast
+
+
+STATE
+ = inside the constructor
+
+CALLBACK
+ = to manipulate the data (onSearchVideo, onVideoSelect)
